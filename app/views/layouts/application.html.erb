@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+        <%= stylesheet_link_tag    "application" %>
+        <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+        <script src="https://storage.googleapis.com/feednami-static/js/feednami-client-v1.0.1.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    </head>
+
+    <body id="main-body">
+        <div class="top-bar-right">
+            <div id="logo-holder">
+                <img id="img-logo" src="http://www.clker.com/cliparts/K/o/G/O/R/B/orange-spiral-hi.png" alt="image logo"/>
+                <h4 id="logo">
+                    Flowing Free</h4>
+            </div>
+            <ul class="menu">
+                <li>
+                    <% if user_signed_in? %>
+                    <p><%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %></p>
+                <% else %>
+                    <p>
+                        <%= link_to 'Sign_up', new_user_registration_path %>
+                        |
+                        <%= link_to 'Sign_in', new_user_session_path %>
+                    </p>
+                    <% end %></li>
+            </ul>
+        </div>
+
+        <%= yield %>
+        <footer >ErikDevs 2016</footer>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    </body>
+</html>

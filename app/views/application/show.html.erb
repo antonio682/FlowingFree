@@ -1,0 +1,11 @@
+<div id="search-body">
+    <div class="row medium-up-3" id="day-events-holder"></div>
+    <div class="row">
+        <%= link_to "Click To Go Back" , home_path  , :id => "home-btn", :class =>"button expanded" %>
+    </div>
+    <script type="text/javascript">
+        window.onbeforeunload = function () {
+            return "If you reload you'll lost your actual search."
+        }
+    </script>
+</div>

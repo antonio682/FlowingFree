@@ -1,0 +1,147 @@
+<div id="jumbo">
+    <div id="title">
+        <h1 id="brand" align="middle">Flowing Free in
+            <span class="current-city"></span>
+        </h1>
+    </div>
+
+    <div id="city-form" class="input-group row">
+        <input class="input-group-field " id="search-input-city" type="text" placeholder="Search New City">
+        <div class="input-group-button">
+            <input type="submit" class="button search-button-city" value="Search">
+        </div>
+    </div>
+</div>
+
+<div id="wth" class="callout primary medium-12 columns" align="middle">
+    <h5>
+        <b>Current Weather:</b>
+        <span id="weather-description"></span>
+        <span id="weather-humidity"></span>
+        <span id="weather-temperature"></span>
+    </h5>
+</div>
+<div class="row">
+    <div class='medium-12 harticle'>
+        <h3 class="text-center">
+            News
+            <span class="current-city"></span>
+        </h3>
+        <hr>
+    </div>
+    <div id="news-slider" class="news-slider"></div>
+</div>
+<div class="row">
+    <div class='medium-12 harticle'>
+        <h3 class="text-center">
+            What's Happening by Date
+            <span class="current-city"></span>
+        </h3>
+        <hr>
+    </div>
+    <div class=" small-up-1 medium-up-3 large-up-3 article">
+        <div class='column' id="events-day">
+            <div class='card'>
+                <div class='content img-dates'>
+                    <%= link_to events_day_path do %>
+                    <%= image_tag  "today-is-the-day.jpg" %>
+                    <% end %>
+                </div>
+                <h3 class="text-center">
+                    <b>Today</b>
+                </h3>
+            </div>
+        </div>
+
+        <div class='column' id="events-week">
+            <div class='card'>
+                <div class='content img-dates'>
+                    <%= link_to events_day_path do %>
+                    <%= image_tag  "week.png" %>
+                    <% end %>
+                </div>
+                <h3 class="text-center">
+                    <b>
+                        This Week</b>
+                </h3>
+            </div>
+        </div>
+
+        <div class='column' id="events-month">
+            <div class='card'>
+                <div class='content img-dates'>
+                    <%= link_to events_day_path do %>
+                    <%= image_tag  "upcoming.jpg" %>
+                    <% end %>
+                </div>
+                <h3 class="text-center">
+                    <b>
+                        Upcoming</b>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="categories">
+    <div class='medium-12 harticle'>
+        <h3 class="text-center">
+            Categories
+            <span class="current-city"></h3>
+        </h3>
+        <hr>
+    </div>
+    <div class=" small-up-1 medium-up-3 large-up-3 article">
+        <div class="column img-categories">
+            <%= image_tag "place.jpg" %>
+            <h3 class="text-center">
+                <b>
+                    Places</b>
+            </h3>
+            <div id="places-holder">
+                <a data-name=""></a>
+            </div>
+        </div>
+        <div class="column img-categories">
+            <%= image_tag "concert.jpg" %>
+            <h3 class="text-center">
+                <b>
+                    Concerts</b>
+            </h3>
+            <div id="gigs-holder">
+                <a data-name=""></a>
+            </div>
+        </div>
+        <div class="column img-categories">
+            <%= image_tag "venues.jpg" %>
+            <h3 class="text-center">
+                <b>
+                  Venues</b>
+            </h3>
+            <div id="venues-holder">
+                <a data-name=""></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="reveal" data-reveal>
+    <h2 id="modalTitle"></h2>
+    <p id="mod-1"></p>
+    <p id="mod-2"></p>
+    <p id="mod-3"></p>
+    <p id="mod-4"></p>
+    <p id="mod-5"></p>
+    <p id="mod-6"></p>
+    <form action="/event/create" method="POST">
+        <input id="input1" name="a" type="hidden" value="">
+        <input id="input2" name="b" type="hidden" value="">
+        <input id="input3" name="c" type="hidden" value="">
+        <input id="input4" name="d" type="hidden" value="">
+        <input id="input5" name="e" type="hidden" value="">
+        <input id="input5" name="f" type="hidden" value="">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button type="submit" class="button">Send</button>
+    </form>
+    <a class="close-button" data-close>&#215;</a>
+</div>
