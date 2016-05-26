@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
     has_many :proposals, through: :userproposals
 
     validates :email, presence: true, uniqueness: true
-    validates :nick, presence: true, uniqueness: true
     validates :name, presence: true
-    validates :birth_date, presence: true
 
 end

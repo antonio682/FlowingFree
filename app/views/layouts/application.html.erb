@@ -16,22 +16,28 @@
     <body id="main-body">
         <div class="top-bar-right">
             <div id="logo-holder">
-                <img id="img-logo" src="http://www.clker.com/cliparts/K/o/G/O/R/B/orange-spiral-hi.png" alt="image logo"/>
+                <img id="img-logo" src="http://www.clker.com/cliparts/K/o/G/O/R/B/orange-spiral-hi.png" alt="image logo"></img>
                 <h4 id="logo">
-                    Flowing Free</h4>
+                    <%= link_to  "Flowing Free", home_path %>
+               </h4>
             </div>
             <ul class="menu">
                 <li>
                     <% if user_signed_in? %>
-                    <p><%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %></p>
-                <% else %>
-                    <p>
-                        <%= link_to 'Sign_up', new_user_registration_path %>
+                    <p class="menu-1">
+                        <%= link_to 'Your Recommendations', user_proposals_path(current_user.id) %>
                         |
-                        <%= link_to 'Sign_in', new_user_session_path %>
+                        <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
+                    </p>
+                <% else %>
+                    <p class="menu-1">
+                        <%= link_to 'Register', new_user_registration_path %>
+                        |
+                        <%= link_to 'Log In', new_user_session_path %>
                     </p>
                     <% end %></li>
             </ul>
+
         </div>
 
         <%= yield %>

@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'foundation-rails'
-
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +47,8 @@ group :development, :test do
   gem 'autotest-rails'
   gem 'guard-bundler'
   gem 'guard-rails'
+
+  gem 'foreman'
 end
 
 group :development do

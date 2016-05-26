@@ -5,18 +5,16 @@ class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
 
     def index
-      @_current_user ||= session[:current_user_id] &&
-      User.find_by(id: session[:current_user_id])
+
+      @proposal = Proposal.new
     end
 
     def show
-
+      @range = params[:range_date_event]
     end
 
     protected
     def configure_permitted_parameters
-        #  devise_parameter_sanitizer.for(:sign_up) << :name
-        devise_parameter_sanitizer.for(:sign_up) + [:name, :email, :nick, :avatar, :birth_date]
-        #  devise_parameter_sanitizer.for(:account_update) + [:first_name, :last_name, :company_name]
+        devise_parameter_sanitizer.for(:sign_up) << :name
     end
 end

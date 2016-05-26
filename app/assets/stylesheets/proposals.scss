@@ -3,9 +3,52 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(https://fonts.googleapis.com/css?family=Chelsea+Market);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+
 body,
 html {
     background: #FAFAFA;
+}
+h1,
+h4 {
+    font-family: 'Chelsea Market', cursive;
+    color: #000000;
+    text-shadow: 2px 2px 4px #ffab40;
+}
+#h-title{
+  font-family: 'Chelsea Market', cursive;
+  color: #000000;
+  text-shadow: 2px 2px 4px #ffab40;
+  padding-left: 20%;
+}
+#h-content{
+  padding-left: 35%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+#delete-btn{
+  margin-left: 70%;
+  font-family: 'Chelsea Market', cursive;
+  color: #0099ff;
+  text-shadow: 2px 2px 4px #ffab40;
+}
+#arrow-bck{
+  color: red;
+}
+#go-back {
+    display: inline-block;
+    margin-left: 8%;
+    padding-right: 12%;
+}
+#go-back:hover {
+    color: orange;
+    text-shadow: 2px 2px 4px #000000;
+}
+#current-range {
+    font-family: 'Chelsea Market', cursive;
+    color: #ffab40;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 4em;
+    display: inline-block;
 }
 #day-events-holder {
     background: #ffab40;

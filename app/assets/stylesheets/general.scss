@@ -1,0 +1,156 @@
+footer {
+    height: 100px;
+    background-color: black;
+    color: orange;
+    font-size: 2em;
+    text-align: center;
+    font-family: 'Chelsea Market', cursive;
+    padding-top: 2%;
+}
+.menu-1{
+  font-family: 'Chelsea Market', cursive;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+#places-holder, #gigs-holder, #venues-holder, #news-holder {
+    overflow-y: scroll;
+    height: 200px;
+    width: 100%;
+}
+#jumbo {
+    height: 500px;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#logo-holder {
+    margin-top: 0.75%;
+    display: inline-block;
+}
+#logo {
+    font-family: 'Chelsea Market', cursive;
+    color: #ffab40;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 2em;
+    margin-left: 1%;
+    display: inline-block;
+}
+#img-logo {
+    padding-bottom: 2%;
+    width: 4%;
+    height: 4%;
+}
+#brand {
+    font-family: 'Chelsea Market', cursive;
+    font-weight: bold;
+    color: #0099ff;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 6em;
+}
+#title h2 {
+  font-family: 'Chelsea Market', cursive;
+  font-weight: bold;
+  color: #ffab40;
+  text-shadow: 2px 2px 4px #000000;
+}
+#title {
+    padding-top: 10%;
+}
+#wth {
+    font-family: 'Chelsea Market', cursive;
+    background-color: orange;
+    color: black;
+}
+#search-input-city {
+    border: 2px solid #ffab40;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+.current-city {
+    font-family: 'Chelsea Market', cursive;
+    font-weight: bolder;
+    color: #0099ff;
+    text-shadow: 1px 1px 1px black;
+}
+.menu {
+    float: right;
+    margin-right: 1%;
+    margin-top: 1%;
+}
+.top-bar-right {
+    color: #ffab40;
+    background-color: black;
+    width: 100%;
+}
+.top-bar-right a {
+    color: #ffab40;
+    background-color: black;
+    width: 100%;
+}
+.article {
+    /*background-color: #ffd699;*/
+    margin-top: 3%;
+    height: 60%;
+}
+.harticle {
+    margin-top: 7%;
+}
+.harticle h3 {
+    color: black;
+    font-family: 'Chelsea Market', cursive;
+    text-shadow: 1px 1px 1px black;
+}
+.img-dates img {
+    width: 300px;
+    height: 400px;
+}
+.slick-prev:after {
+    content: " > ";
+    color: red;
+    font-size: 30px;
+}
+.slick-arrow {
+    font-family: 'Chelsea Market', cursive;
+    font-size: 3em;
+}
+.slick-next:before {
+    content: " < ";
+    color: red;
+    font-size: 30px;
+}
+#news-slider {
+    border: 1px solid red;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 5%;
+}
+#categories {
+    margin-bottom: 2%;
+}
+.img-categories img {
+    height: 200px;
+}
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background: #6be1a0;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 0, 0, 0.4);
+}

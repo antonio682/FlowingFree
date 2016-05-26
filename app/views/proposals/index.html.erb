@@ -1,0 +1,16 @@
+<div class="row">
+    <h1 id="current-range">Your History of Recommendations</h1>
+    <h4 id="go-back">
+        <span class="arrow-bck"><</span>
+        <%= link_to "Go Back" , home_path %>
+    </h4>
+</div>
+     <%@user_proposals.each do |proposal| %>
+     <hr>
+     <span id="h-title"><%= proposal.title%></span><br>
+     <span id="h-content"><%= proposal.content %></span></br>
+     <%= link_to "Delete ", user_proposal_path(current_user.id, proposal.id) ,  :method => :delete, :id => "delete-btn"%>
+     <%end %>
+<div class="row">
+    <%= link_to "Click To Go Back" , home_path , :id =>"home-btn", :class =>"button expanded" %>
+</div>

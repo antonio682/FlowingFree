@@ -3,12 +3,13 @@
         <h1 id="brand" align="middle">Flowing Free in
             <span class="current-city"></span>
         </h1>
+        <h2 align="middle">Find and Recommend All Kind Of Events</h2>
     </div>
 
     <div id="city-form" class="input-group row">
-        <input class="input-group-field " id="search-input-city" type="text" placeholder="Search New City">
+        <input class="input-group-field " id="search-input-city" type="text" placeholder="Move to Another Location">
         <div class="input-group-button">
-            <input type="submit" class="button search-button-city" value="Search">
+            <input type="submit" class="button search-button-city" value="MOVE">
         </div>
     </div>
 </div>
@@ -21,16 +22,7 @@
         <span id="weather-temperature"></span>
     </h5>
 </div>
-<div class="row">
-    <div class='medium-12 harticle'>
-        <h3 class="text-center">
-            News
-            <span class="current-city"></span>
-        </h3>
-        <hr>
-    </div>
-    <div id="news-slider" class="news-slider"></div>
-</div>
+
 <div class="row">
     <div class='medium-12 harticle'>
         <h3 class="text-center">
@@ -43,7 +35,7 @@
         <div class='column' id="events-day">
             <div class='card'>
                 <div class='content img-dates'>
-                    <%= link_to events_day_path do %>
+                    <%= link_to events_day_path(range_date_event: "Today") do %>
                     <%= image_tag  "today-is-the-day.jpg" %>
                     <% end %>
                 </div>
@@ -56,7 +48,7 @@
         <div class='column' id="events-week">
             <div class='card'>
                 <div class='content img-dates'>
-                    <%= link_to events_day_path do %>
+                    <%= link_to events_day_path(range_date_event: "This Week ") do %>
                     <%= image_tag  "week.png" %>
                     <% end %>
                 </div>
@@ -70,7 +62,7 @@
         <div class='column' id="events-month">
             <div class='card'>
                 <div class='content img-dates'>
-                    <%= link_to events_day_path do %>
+                    <%= link_to events_day_path(range_date_event: "Upcoming ") do %>
                     <%= image_tag  "upcoming.jpg" %>
                     <% end %>
                 </div>
@@ -124,7 +116,16 @@
         </div>
     </div>
 </div>
-
+<div class="row">
+    <div class='medium-12 harticle'>
+        <h3 class="text-center">
+            News
+            <span class="current-city"></span>
+        </h3>
+        <hr>
+    </div>
+    <div id="news-slider" class="news-slider"></div>
+</div>
 <div id="myModal" class="reveal" data-reveal>
     <h2 id="modalTitle"></h2>
     <p id="mod-1"></p>
