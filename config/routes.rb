@@ -9,6 +9,8 @@ Rails.application.routes.draw do
         resources :proposals
     end
 
+    resources :proposals
+
     namespace :api do
         namespace :v1 do
             resources :proposals

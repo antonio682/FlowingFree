@@ -107,19 +107,21 @@ footer {
     height: 400px;
 }
 .slick-prev:after {
-    content: " > ";
+    content: " News ";
     color: red;
-    font-size: 30px;
+    font-size: 1em;
 }
 .slick-arrow {
     font-family: 'Chelsea Market', cursive;
     font-size: 3em;
 }
 .slick-next:before {
-    content: " < ";
+    content: " News ";
     color: red;
-    font-size: 30px;
+    font-size: 1em;
 }
+
+
 #news-slider {
     border: 1px solid red;
     padding: 20px 20px 20px 20px;

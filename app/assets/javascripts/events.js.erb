@@ -98,10 +98,25 @@ $(document).on('ready page:load', function() {
       var friendEmail = $('#email-friend').val();
       var dat = {"dataTitle": dataTitle, "dataContent": dataContent, "friendEmail": friendEmail };
 
-      var range = $('#current-range').val();
-
+      var range = $('#current-range').text();
+      console.log(range);
+      console.log("gggggg");
       FlowingFreeApp.ajaxRequest('/api/v1/proposals',FlowingFreeApp.successProposal, "POST", dat, FlowingFreeApp.errorProposal);
       FlowingFreeApp.getDayEvents(city, country);
+
+      switch (range) {
+        case "Today in " + city:
+          FlowingFreeApp.getDayEvents(city, country);
+          break;
+        case "This Week in " + city:
+          FlowingFreeApp.getWeekEvents(city, country);
+          break;
+        case "Upcoming in " + city:
+          FlowingFreeApp.getMonthEvents(city, country);
+          break;
+        default:
+          break;
+      }
 
    });
 
@@ -187,7 +202,7 @@ FlowingFreeApp.successWeather = function(response) {
 }
 
 FlowingFreeApp.successEvents = function(response) {
-
+  console.log(response);
     for (var i = 0; i <= response.length - 1; i += 1) {
         $('#day-events-holder').append("<div class='medium-6 columns end'><div class='card'><div class='content'><span class='title'>" + response[i].artists[0].name + "<img id='chin' src='http://us.cdn2.123rf.com/168nwm/limbi007/limbi0071111/limbi007111100013/11506992-3d-ilustracion-de-la-chincheta-de-color-naranja-sobre-fondo-blanco-pinang.jpg'></img>" +
             "</span><p> Date: " + response[i].datetime.replace("T", " ") +
@@ -197,7 +212,7 @@ FlowingFreeApp.successEvents = function(response) {
             "</p><p>" + response[i].venue.country +
             "</div>  <div class='action'>" +
             "<a href=''>Buy Tickets</a><hr>" +
-            "<input id='email-friend' type='email' placeholder='Friend`s Email'><a id='a-add-proposal' href='#' data-title='" + response[i].artists[0].name+"' data-content='"+response[i].datetime.replace("T", " ")+ "Ticket Status: " + response[i].ticket_status  + response[i].venue.name + response[i].venue.country +"'>Send to a Friend</a>"+
+            "<input id='email-friend' type='email' placeholder='Friend`s Email'><a id='a-add-proposal' href='#' data-title='" + response[i].artists[0].name+"' data-content='"+"Date :" + response[i].datetime.replace("T", " ") + " Ticket Status: " + response[i].ticket_status  +" Venue: "+ response[i].venue.name +" City: " + response[i].venue.city +" Country: " +response[i].venue.country +"'>Send to a Friend</a>"+
             "</div></div>"
         );
     }

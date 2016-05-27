@@ -47,8 +47,8 @@ group :development, :test do
   gem 'autotest-rails'
   gem 'guard-bundler'
   gem 'guard-rails'
-
   gem 'foreman'
+
 end
 
 group :development do

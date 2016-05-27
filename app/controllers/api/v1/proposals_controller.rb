@@ -10,10 +10,12 @@ class ::Api::V1::ProposalsController < ApplicationController
         end
 
         if !current_user.nil?
-            render json: { status: 404 }
-        else
+
             ShareEventMailer.share_email(@user, params[:friendEmail]).deliver_now
             render json: { status: 201 }
+        else
+            render json: { status: 404 }
+
         end
     end
 end
